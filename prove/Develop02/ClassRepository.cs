@@ -10,18 +10,26 @@ using System.Security.Cryptography.X509Certificates;
 // what does what.
 public class FileEditor {
     // First, I'll define variables that the function will use:
-    public string _fileName;
-    public string _addDate;
-    public string _addTime;
-    public string _addEntryPrompt;
-    public string _addEntryContent;
-    public List<string> _saveThis;
+    public string _fileName;  // This contains the name of the file
+    public string _addDate;   // This variable is meant to hold the date in a string
+    public string _addTime;   // This variable holds the time in a string
+    public string _addEntryPrompt;   // This variable holds the propmt that was given to the user
+    public string _addEntryContent;   // This varible holds the content of the journal entry
+    public List<string> _saveThis;   // This is vital for the program to actually keep the previous journal entries.
+    // I don't know why, but my first attempts always deleted what was already inside the text file, so I added this
+    // to maintain what was already there. It might take up a lot of temporary computer storage space but it was the
+    // only and fastest way that I could concieve to fix the problem.
 
     public FileEditor()
     {
     }
     
     public void ReadJournalEntries() {
+        // Name: ReadJournalEntries
+        // Purpose: Read text from a designated file
+        // Parameters: None
+        // Returns: None
+
         string[] lines = System.IO.File.ReadAllLines(_fileName);
     
         List<string> LineList = new List<string>();
@@ -74,11 +82,11 @@ public class FileEditor {
             }
         
             // OutputFile.WriteLine("∫");
-            OutputFile.WriteLine("\n"+_addDate);
-            OutputFile.WriteLine(_addTime);
-            OutputFile.WriteLine(_addEntryPrompt);
-            OutputFile.WriteLine(_addEntryContent);
-            OutputFile.WriteLine("∫");
+            OutputFile.WriteLine("\n"+_addDate.Trim());
+            OutputFile.WriteLine(_addTime.Trim());
+            OutputFile.WriteLine(_addEntryPrompt.Trim());
+            OutputFile.WriteLine(_addEntryContent.Trim());
+            OutputFile.WriteLine("∫".Trim());
         }
     }
     

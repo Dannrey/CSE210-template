@@ -37,15 +37,15 @@ Journal._saveThis = Journal.KeepJournalEntries();
 
 // UserSelection class refenrences:
 UserSelection Choice = new UserSelection();
-Choice._rememberThis = "You have not entered anything yet";
+Choice._rememberThis = "You have not entered anything yet!";
 
 // Now that I have the code backbone set up, I can go build the part of the program that the user would actually
 // interact with:
 Console.WriteLine("Hello and welcome! I am the Journal Application and Reminder Establishment Device, but you may call me\nJ.A.R.E.D.");
-Console.WriteLine("My purpose today is to provide you with a prompt to assist you in keeping a consistent journal.");
+Console.WriteLine("My purpose today is to provide you with a prompt to assist you in keeping a consistent journal and to save any\nentry that you might make.");
 Console.WriteLine("Each of the selection options will have their own individual instruction that will be displayed when you select one,\n");
 Console.WriteLine("and you can select all options multiple times (aside from option 5, since that closes the program).");
-Console.WriteLine("My methods to assist you today are:");
+Console.WriteLine("My methods to assist you today are:\n");
 // Console.Write("Please select and type a numeric option from the list: ");
 // string UserInput = Console.ReadLine();
 
@@ -85,20 +85,32 @@ do {
         Journal._addEntryContent = Choice._rememberThis;
     }
     else if (UserInput == "2") {
-        Choice.Selection2();
+        if (Journal._addEntryContent.Trim() == "") {
+            Console.WriteLine("I'm sorry, but you didn't actually type anything.");
+        }
+        else {
+            Choice.Selection2();
+        }
+        
     }
     else if (UserInput == "3") {
         Journal.ReadJournalEntries();
     }
 
     else if (UserInput == "4") {
-        Journal._saveThis = Journal.KeepJournalEntries();
-        Journal._addEntryContent = Choice._rememberThis;
-        Journal.AppendThis(Journal._saveThis);
-        Console.WriteLine("...");
-        Console.WriteLine("Saving...");
-        Console.Write("Save Complete");
-        Console.ReadLine();
+        if (Journal._addEntryContent == "You have not entered anything yet"||Journal._addEntryContent.Trim() =="") {
+            Console.WriteLine("You have not entered anything yet! Please type something");
+        }
+        else {
+            Journal._saveThis = Journal.KeepJournalEntries();
+            Journal._addEntryContent = Choice._rememberThis;
+            Journal.AppendThis(Journal._saveThis);
+            Console.WriteLine("...");
+            Console.WriteLine("Saving...");
+            Console.WriteLine("Save Complete, Hit enter when you are ready to continue.");
+            Console.ReadLine();
+            
+        }
     }
     else if (UserInput == "5") {
         Console.WriteLine("See you soon!");
@@ -106,6 +118,7 @@ do {
     else {
         Console.WriteLine("Sorry, but that is not one of the available options. Please try again.");
     }
+    Console.WriteLine();
 } while (UserInput != "5");
 
 }

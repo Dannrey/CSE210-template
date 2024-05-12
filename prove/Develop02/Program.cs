@@ -19,11 +19,16 @@ Journal._fileName = MyDoc;
 Journal._addDate = theCurrentTime.ToShortDateString();
 Journal._addTime = theCurrentTime.ToShortTimeString();
 
-// Console.Write("What do you wish to enter? ");
-// Journal._addEntryContent = Console.ReadLine();
+// This will be a combination of an instance of the random class and a reference to my DisplayThese class.
+Random randomGenerator = new Random();
+List<string> RandomList = new List<string>();
+RandomList.Add("What was the most exciting thing you did today?");
+RandomList.Add("What was the worst thing that happened to you today?");
+RandomList.Add("What was the best thing that you ate today?");
+RandomList.Add("Where did you go today?");
+RandomList.Add("What did you do in your offtime today?");
 
-// Console.WriteLine("Make up a prompt: ");
-// Journal._addEntryPrompt = Console.ReadLine();
+
 
 Journal._saveThis = Journal.KeepJournalEntries();
 // Journal.ReadJournalEntries();
@@ -51,10 +56,55 @@ do {
     Console.Write("Please select and type a numeric option from the list: ");
     UserInput = Console.ReadLine();
     if (UserInput == "1") {
-        Choice._rememberThis = Choice.Selection1();
+        Console.WriteLine("This option will allow you to create a new entry.");
+        Console.WriteLine("Before you can enter your entry, I need to provide you with a randomly selected prompt.");
+        Console.WriteLine("Again, it is up to you whether or not to head the prompt, but nevertheless, here it is:");
+        
+        Journal._addDate = theCurrentTime.ToShortDateString();
+        Journal._addTime = theCurrentTime.ToShortTimeString();
+
+        int PlaceSelecter = randomGenerator.Next(0,RandomList.Count);
+        Journal._addEntryPrompt = RandomList[PlaceSelecter];
+        Console.WriteLine($"{Journal._addEntryPrompt}");
+
+        string TransitoryVariable1 = Choice.Selection1();
+
+        // Now, if you pay close attention you might be wondering what is going on here. Well, I'm glad you asked, or 
+        // stopped to read this comment. I noticed that for some reason my code was including "QUIT()" at the end of each 
+        // of my entries, and so, rather than going through and possibly messing up the code in an attempt to remove that,
+        // I made a few lines here to pluck out the QUIT() option for me. It might seem like the long, roundabout way to 
+        // accomplish this task but it seemed the simplest to me and I've done similar things to it before.
+        // In the long run, it would be better to go back and modify the original function itself since that would root out
+        // any future errors if I chose to reuse the code, butfor this single assignment it works perfectly well.
+        List<string> TransitoryList = new List<string>();
+        TransitoryList.Add(TransitoryVariable1);
+        foreach (string item in TransitoryList) {
+            string[] parts = item.Split("QUIT()");
+            Choice._rememberThis = parts[0];
+        }
+        Journal._addEntryContent = Choice._rememberThis;
     }
     else if (UserInput == "2") {
         Choice.Selection2();
+    }
+    else if (UserInput == "3") {
+        Journal.ReadJournalEntries();
+    }
+
+    else if (UserInput == "4") {
+        Journal._saveThis = Journal.KeepJournalEntries();
+        Journal._addEntryContent = Choice._rememberThis;
+        Journal.AppendThis(Journal._saveThis);
+        Console.WriteLine("...");
+        Console.WriteLine("Saving...");
+        Console.Write("Save Complete");
+        Console.ReadLine();
+    }
+    else if (UserInput == "5") {
+        Console.WriteLine("See you soon!");
+    }
+    else {
+        Console.WriteLine("Sorry, but that is not one of the available options. Please try again.");
     }
 } while (UserInput != "5");
 

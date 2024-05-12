@@ -16,29 +16,11 @@ public class DisplayThese {
     public string _addEntryPrompt;
     public string _addEntryContent;
     public List<string> _saveThis;
-    
-    public DisplayThese() {
+
+    public DisplayThese()
+    {
     }
-
-
-    // I know for a fact that this function will not work, so I have it commented out.
-    // public string Processing() {
-    //     string[] lines = System.IO.File.ReadAllLines(_fileName);
     
-    //     List<string> LineList = new List<string>();
-    //     foreach (string line in lines) {
-    //         // string[] parts = line.Split("<?>");
-    //         // LineList.Add(parts);
-    //         LineList.Add(line);
-    //     }    
-
-    //     string MyContent = "";
-    //     foreach (string LineItem in LineList) {
-    //         MyContent = $"{MyContent}\n{LineItem}";
-    //     }
-    //     return MyContent;
-    // }
-
     public void ReadJournalEntries() {
         string[] lines = System.IO.File.ReadAllLines(_fileName);
     
@@ -83,11 +65,11 @@ public class DisplayThese {
     }
 
 
-    public void AppendThis() {
+    public void AppendThis(List<string> ListX) {
         using (StreamWriter OutputFile = new StreamWriter(_fileName)) {
             int iteration = 0;
-            foreach (string item in _saveThis) {
-                OutputFile.WriteLine(_saveThis[iteration]);
+            foreach (string item in ListX) {
+                OutputFile.WriteLine(ListX[iteration]);
                 iteration += 1;
             }
         
@@ -95,7 +77,8 @@ public class DisplayThese {
             OutputFile.WriteLine("\n"+_addDate);
             OutputFile.WriteLine(_addTime);
             OutputFile.WriteLine(_addEntryPrompt);
-            OutputFile.WriteLine(_addEntryContent+"∫");
+            OutputFile.WriteLine(_addEntryContent);
+            OutputFile.WriteLine("∫");
         }
     }
     
@@ -117,15 +100,19 @@ public class UserSelection {
     public string Selection1() {
         // Selection1 will take input from the user and store it inside a variable, ready to be appended to the
         // text file.
-        Console.WriteLine("This option will allow you to create a new entry. You are invited to respond to the computer generated\nresponse, but that is etirely up to you.");
         string RecorderEso = "";
         string UserResponse = "";
+        string TheThirdOne = "";
         Console.WriteLine("Hit enter when you are ready to move onto a new line. Type 'QUIT()' to end this part of the program.");
         while (UserResponse != "QUIT()") {
             Console.Write("");
             if (UserResponse != "QUIT()") {
                 UserResponse = Console.ReadLine();
-                RecorderEso = $"{RecorderEso}\n{UserResponse}";
+                TheThirdOne = RecorderEso;
+                RecorderEso = $"{TheThirdOne}\n{UserResponse}";
+            }
+            else {
+                string EmptyVariable = Console.ReadLine();
             }
             
         }

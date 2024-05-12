@@ -14,7 +14,7 @@ DateTime theCurrentTime = DateTime.Now;
 
 
 // DisplayThese class references:
-DisplayThese Journal = new DisplayThese();
+FileEditor Journal = new FileEditor();
 Journal._fileName = MyDoc;
 Journal._addDate = theCurrentTime.ToShortDateString();
 Journal._addTime = theCurrentTime.ToShortTimeString();

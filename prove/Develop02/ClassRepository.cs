@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 // And I wanted to try something different with the format of my files. After all, in C languages, you don't
 // actually need to indent lines in order for the code to work. I'm using the indentations to help keep track of
 // what does what.
-public class DisplayThese {
+public class FileEditor {
     // First, I'll define variables that the function will use:
     public string _fileName;
     public string _addDate;
@@ -17,7 +17,7 @@ public class DisplayThese {
     public string _addEntryContent;
     public List<string> _saveThis;
 
-    public DisplayThese()
+    public FileEditor()
     {
     }
     

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 // class Program
 // {
@@ -38,23 +39,15 @@ public class Person
         Console.WriteLine($"{_givenName} {_familyName}");
     }
 }
+
 class Program
 {
     static void Main(string[] args)
     {
-        Person person = new Person();
-        person._givenName = "Danniel";
-        person._familyName = "Reynolds";
-        person.ShowWesternName();
-        person.ShowEasternName();
-
-        Console.WriteLine();
-
-        Person person2 = new Person();
-        person2._givenName = "Teddy";
-        person2._familyName = "Roosevelt";
-        person2.ShowWesternName();
-        person2.ShowEasternName();
+        DateTime theCurrentTime = DateTime.Now;
+        string date = theCurrentTime.ToShortDateString();
+        string time = theCurrentTime.ToShortTimeString();
+        Console.WriteLine($"The current date is {date}, and the hour is {time}");
     }
 }
 

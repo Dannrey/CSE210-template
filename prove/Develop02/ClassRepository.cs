@@ -1,0 +1,143 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+
+// So, here is where I defined my custom classes and functions.
+// It was necessary to do this in order to allow me to program with my easily reusable functions,
+// And I wanted to try something different with the format of my files. After all, in C languages, you don't
+// actually need to indent lines in order for the code to work. I'm using the indentations to help keep track of
+// what does what.
+public class DisplayThese {
+    // First, I'll define variables that the function will use:
+    public string _fileName;
+    public string _addDate;
+    public string _addTime;
+    public string _addEntryPrompt;
+    public string _addEntryContent;
+    public List<string> _saveThis;
+    
+    public DisplayThese() {
+    }
+
+
+    // I know for a fact that this function will not work, so I have it commented out.
+    // public string Processing() {
+    //     string[] lines = System.IO.File.ReadAllLines(_fileName);
+    
+    //     List<string> LineList = new List<string>();
+    //     foreach (string line in lines) {
+    //         // string[] parts = line.Split("<?>");
+    //         // LineList.Add(parts);
+    //         LineList.Add(line);
+    //     }    
+
+    //     string MyContent = "";
+    //     foreach (string LineItem in LineList) {
+    //         MyContent = $"{MyContent}\n{LineItem}";
+    //     }
+    //     return MyContent;
+    // }
+
+    public void ReadJournalEntries() {
+        string[] lines = System.IO.File.ReadAllLines(_fileName);
+    
+        List<string> LineList = new List<string>();
+        
+        List<string> KeepThis = new List<string>();
+        foreach (string line in lines) {
+            string[] parts = line.Split("∫");
+            foreach (string part in parts) {
+                KeepThis.Add(part);
+            }
+            // LineList.Add(parts);
+            // LineList.Add(line);
+        }
+
+        foreach (string i in KeepThis) {
+            if (i != "∫") {
+                Console.WriteLine(i);
+            }
+        }
+        // return KeepThis;
+    }
+
+
+    public List<string> KeepJournalEntries() {
+        string[] lines = System.IO.File.ReadAllLines(_fileName);
+    
+        List<string> LineList = new List<string>();
+        
+        List<string> KeepThis = new List<string>();
+        foreach (string line in lines) {
+            string[] parts = line.Split("∞");
+            foreach (string part in parts) {
+                KeepThis.Add(part);
+            }
+        }
+
+        // foreach (string i in KeepThis) {
+            // Console.WriteLine(i);
+        // }
+        return KeepThis;
+    }
+
+
+    public void AppendThis() {
+        using (StreamWriter OutputFile = new StreamWriter(_fileName)) {
+            int iteration = 0;
+            foreach (string item in _saveThis) {
+                OutputFile.WriteLine(_saveThis[iteration]);
+                iteration += 1;
+            }
+        
+            // OutputFile.WriteLine("∫");
+            OutputFile.WriteLine("\n"+_addDate);
+            OutputFile.WriteLine(_addTime);
+            OutputFile.WriteLine(_addEntryPrompt);
+            OutputFile.WriteLine(_addEntryContent+"∫");
+        }
+    }
+    
+}
+
+public class UserSelection {
+    // This class will contain a selection of functions designed to be used on a key number being entered into
+    // the corresponding question in the main program.
+    
+    // I also have a few variables that need to be created in order for this part of the program to work.
+    // These are defined below:
+    public string _rememberThis;
+
+
+    public UserSelection()
+    {
+    }
+
+    public string Selection1() {
+        // Selection1 will take input from the user and store it inside a variable, ready to be appended to the
+        // text file.
+        Console.WriteLine("This option will allow you to create a new entry. You are invited to respond to the computer generated\nresponse, but that is etirely up to you.");
+        string RecorderEso = "";
+        string UserResponse = "";
+        Console.WriteLine("Hit enter when you are ready to move onto a new line. Type 'QUIT()' to end this part of the program.");
+        while (UserResponse != "QUIT()") {
+            Console.Write("");
+            if (UserResponse != "QUIT()") {
+                UserResponse = Console.ReadLine();
+                RecorderEso = $"{RecorderEso}\n{UserResponse}";
+            }
+            
+        }
+        return RecorderEso;
+    }
+
+    public void Selection2() {
+        // Selection2 will display what was last written by the user.
+        Console.WriteLine(_rememberThis);
+        Console.Write("Hit the enter key when you are ready to continue: ");
+        string EmptyVariable = Console.ReadLine();
+    }
+
+
+}

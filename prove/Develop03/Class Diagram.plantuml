@@ -11,8 +11,9 @@ GospelLibrary : +GospelLibrary()
 GospelLibrary : +GospelLibrary(Scripture: string)
 
 'Methods
-GospelLibrary : -StockScriptureDictionary(): void
+GospelLibrary : +StockScriptureDictionary(): void
 GospelLibrary : +RandomKey(): void
+GospelLibrary : +GetScripture(): string
 
 
 
@@ -56,6 +57,7 @@ Word : +Word()
 
 'Methods:
 Word : +RandomlySelectedHiddenWord(): void
+Word : +ReturnHiddenWord(): int
 ' Word : +SetWordStatus(): void
 
 

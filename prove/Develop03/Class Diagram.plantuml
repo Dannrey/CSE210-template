@@ -1,0 +1,74 @@
+@startuml None
+'GospelLibrary class
+'Attributes:
+GospelLibrary : -_bibleDictionary: Dictionary<string, string>
+GospelLibrary : -_selectedScripture: string
+GospelLibrary : -_keyLibrary: List<string>
+GospelLibrary : -_selectedKeyIndex: int
+
+'Constructors:
+GospelLibrary : +GospelLibrary()
+GospelLibrary : +GospelLibrary(Scripture: string)
+
+'Methods
+GospelLibrary : -StockScriptureDictionary(): void
+GospelLibrary : +RandomKey(): void
+
+
+
+'ScriptureMastery class
+'Attributes:
+ScriptureMastery : -_scripture: string
+ScriptureMastery : -_oneWordLess: List<string>
+ScriptureMastery : -_wordsOfTheLivingProphets: List<string>
+
+'Constructors:
+ScriptureMastery : +ScritpureMastery(ChosenScripture: string)
+
+'Methods:
+ScriptureMastery : +SplitStringToWords(): void
+ScriptureMastery : +ReplaceChosenWord(): void
+ScriptureMastery : +GetWordCount(): int
+ScriptureMastery : +PrintScripture()
+
+
+'Reference class
+'Attributes:
+Reference : -_scriptureReference: string
+Reference : -_hideReference: bool
+
+'Constructors:
+Reference : +Reference()
+
+'Methods:
+Reference : +GetReferenceStatus(hideReference: bool): void
+Reference : +HideReference(ReferenceIsHidden: bool): void
+Reference : +PrintReference(): void
+
+
+
+'Word class
+'Attributes:
+Word : -_wordPosition: int
+
+'constructors:
+Word : +Word()
+
+'Methods:
+Word : +RandomlySelectedHiddenWord(): void
+' Word : +SetWordStatus(): void
+
+
+
+'Word2 class
+'Attributes
+Word2 : _wordHiddenStatus: bool
+Word2 : _wordText: string
+
+'Constructors:
+Word2 : Word2()
+Word2 : Word2(word: string)
+
+'Methods:
+Word2 : ObtainHiddenStatus(): void
+@enduml

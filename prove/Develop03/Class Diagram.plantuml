@@ -49,30 +49,30 @@ Reference : +PrintReference(): void
 
 
 
-'Word class
-'Attributes:
-Word : -_wordPosition: int
+' 'Word class
+' ' Attributes:
+' Word : -_wordPosition: int
 
-'constructors:
-Word : +Word()
+' ' constructors:
+' Word : +Word()
 
-'Methods:
-Word : +RandomlySelectedHiddenWord(ListLength: int): void
-Word : +ReturnHiddenWordIndex(): int
-' Word : +SetWordStatus(): void
+' ' Methods:
+' Word : +RandomlySelectedHiddenWord(ListLength: int): void
+' Word : +ReturnHiddenWordIndex(): int
+' ' Word : +SetWordStatus(): void
 
 
 
-'Word2 class
-'Attributes
-Word2 : -_hiddenStatus: bool
+' Word2 class
+' Attributes
+' Word2 : -_hiddenStatus: bool
 Word2 : -_wordText: string
 
-'Constructors:
+' Constructors:
 Word2 : +Word2()
 Word2 : +Word2(word: string)
 
 'Methods:
-Word2 : +ObtainHiddenStatus(): void
+Word2 : +ReplaceSelectedWord(): void
 Word2 : +ReturnHiddenWord(): string
 @enduml

@@ -1,68 +1,41 @@
 using System;
 using System.IO;
-
-// class Program
-// {
-//     static void Main(string[] args)
-//     {
-//         // Console.WriteLine("Hello Sandbox World!");
-//         public class Blinds;
-//         {
-//             public double height;
-//             public double width;
-//             public double color;
-//         }
-        
-//     }
-//     // Blinds kitchen = new Blinds();
-// }
+using System.Collections.Generic;
 
 
-// My experiment with classes.
-// So, I actually managed to figure it out, and I'm glad about it.
-public class Person
-{
-    public string _givenName = "";
-    public string _familyName = "";
-
-    public Person()
-    {
-    }
-
-    public void ShowEasternName()
-    {
-        Console.WriteLine($"{_familyName}, {_givenName}");
-    }
-
-    public void ShowWesternName()
-    {
-        Console.WriteLine($"{_givenName} {_familyName}");
-    }
-}
-
+// Okay. So, today I am testing out how to create a dictionary. In hindsight, I probably should have done this sooner, but hey, hindsight is 20: 20.
 class Program {
     static void Main(string[] args) {
-        string x = "PRINT THIS";
-        Console.WriteLine(x.ToLower());
-        // string LowerCaseX = x.ToLower();
-        Console.ReadLine();
-        Console.Clear();
-        Console.Beep();   //I found this through my own experimentation and will see how I can use it
-        // Console.SetWindowSize(50,50);  // I don't know what this does, but I plan to find out.
+
+        string letter = "Test Run";
+        Console.WriteLine(letter.ToUpper());
+
+        // string punctuation = "_";
+        // int number = 1;
+        // string numeric = "1";
+        // Console.WriteLine(letter+Char.IsLetter(letter,0));
+        // Console.WriteLine(letter+Char.IsLetter(letter,1));
+        // Console.WriteLine(punctuation+Char.IsPunctuation(punctuation,0));
+        // Console.WriteLine(punctuation+Char.IsLetter(punctuation,1));
+        // Console.WriteLine(numeric+Char.IsNumber(numeric,0));
+        // Console.WriteLine();
+
+
+        // Dictionary<string, string> NewDictionary = new Dictionary<string, string>();
+        // NewDictionary.Add("T-1","Lift-off!");
+        // NewDictionary.Add("T+1","Post-launch analysis...");
+        // Console.WriteLine(NewDictionary["T-1"]);
+        // Console.WriteLine(NewDictionary["T+1"]);
+        // Console.Write("Enter a launch code: ");
+        // string LaunchCode = Console.ReadLine();
+        // Console.Write("Enter launch information: ");
+        // string LaunchInformation = Console.ReadLine();
+
+        // Console.WriteLine();
+        // NewDictionary.Add(LaunchCode,LaunchInformation);
+        // Console.WriteLine(NewDictionary[LaunchCode]);
+
     }
 }
 
-
-// class Program
-// {
-//     static void Main(string[] args)
-//     {
-//         DateTime theCurrentTime = DateTime.Now;
-//         string date = theCurrentTime.ToShortDateString();
-//         string time = theCurrentTime.ToShortTimeString();
-//         Console.WriteLine($"The current date is {date}, and the hour is {time}");
-//     }
-// }
-
-// So, as it turns out, you need to define custom classes outside of the thing designated "class program".
-// Aside from that, I do believe that I figured it out.
+// Alright, I feel comfortable with constructing dictionaries now. Now to move on to the main project of week 6!

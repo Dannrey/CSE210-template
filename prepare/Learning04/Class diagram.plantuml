@@ -1,0 +1,17 @@
+@startuml Classes
+' So, first I need to define the parent class:
+Assignment : #_studentName: string
+Assignment : #_topic: string
+
+Assignment : +Classes()
+
+Assignment : +GetSummary()
+
+Assignment <|-- MathAssignment
+MathAssignment : -_textBookSection: string
+MathAssignment : -_problems: List<string>
+MathAssignment : +GetHomeWorkList(): string
+
+Assignment <|-- WritingAssignment
+WritingAssignment : -_title: string
+WritingAssignment : -GetWritingInformation(): string

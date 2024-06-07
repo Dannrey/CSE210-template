@@ -56,9 +56,10 @@ class Program {
         
         Console.WriteLine();
 // 
-        reference.DisplayReference();
-        Console.WriteLine();
+        
+        // Console.WriteLine();
         Console.Clear();
+        reference.DisplayReference();
         verses.StockScripture();
         verses.ShowScripture();
         verses.ShowScripture();

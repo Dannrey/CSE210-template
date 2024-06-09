@@ -36,7 +36,7 @@ BreathingActivity : -_breathingOutro: string
 BreathingActivity : -_breathingInstructions: string
 
 ' Constructors:
-BreathingActivity : +BreathingActivity() : Base()
+BreathingActivity : +BreathingActivity() 
 
 ' Methods:
 BreathingActivity : +BreathingGuider(): void
@@ -52,7 +52,7 @@ ReflectionActivity : -_reflectionInstructions: string
 ReflectionActivity : -_questionList: List<string>
 
 ' Constructors:
-ReflectionActivity : +ReflectiionActivity() : Base()
+ReflectionActivity : +ReflectiionActivity()
 
 ' Methods:
 ReflectionActivity : +DisplayQuestion(): void

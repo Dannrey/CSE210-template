@@ -59,16 +59,44 @@ class Program {
         
         // Console.WriteLine();
         Console.Clear();
-        reference.DisplayReference();
+        Console.WriteLine("You selected scripture is:\n");
+        reference.RevealHiddenReference();
         verses.StockScripture();
-        verses.ShowScripture();
-        verses.ShowScripture();
-        // string UserSelection = "not exit";
-        // do {
-            // Console.Clear();
-            // Console.WriteLine("What do you want to do?");
-            // Console.WriteLine("REVIEW scirpture\n")
-        // } while (UserSelection.ToUpper != "EXIT");
+        verses.RevealScripture();
+        // verses.ShowScripture();
+        string UserSelection = "";
+        bool ReferenceStatus = false;
+        do {
+            Console.WriteLine();
+            if (ReferenceStatus == false) {
+                Console.Clear();
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("REVIEW scripture\nCONTINUE\nHIDE reference\nEXIT program");
+                Console.Write("What will it be? ");
+                UserSelection = Console.ReadLine();
+            }
+            else {
+                Console.Clear();
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("REVIEW scripture\nCONTINUE\nEXIT program");
+                Console.Write("What will it be? ");
+                UserSelection = Console.ReadLine();
+            }
+            Console.WriteLine();
+            if (UserSelection.ToUpper() == "REVIEW") {
+                reference.RevealHiddenReference();
+                verses.RevealScripture();
+            }
+            else if (UserSelection.ToUpper() == "HIDE") {
+                // reference.SetReferenceStatus();
+                reference.HideCharacters();
+                ReferenceStatus = true;
+            }
+            else if (UserSelection.ToUpper() == "CONTINUE") {
+                reference.DisplayReference();
+                verses.DisplayScripture();
+            }
+        } while (UserSelection.ToUpper() != "EXIT");
 
         // Now that I have that, I need to include some of the other functionalities.
         // To start with, I need to display what scripture was selected along with its reference:

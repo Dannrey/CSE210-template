@@ -1,0 +1,75 @@
+@startuml AwarenessExercise
+' __________Activity__________
+' Attributes:
+Activity : -_programIntro: string
+Activity : -_programInstructions: string
+Activity : -_programMenu: string
+Activity : #_duration: int
+Activity : -_activitySelection: string
+Activity : -_programOutro: string
+Activity : #_promptList: List<string>
+
+' Constructors:
+Activity : +Activity()
+Activity : +Activity(PlaceHolder: string)
+
+' Methods:
+Activity : +DisplayIntro(Intro: string): void
+Activity : +DisplayInstructions(Instructions: string): void
+Activity : +DisplayMenu(): void
+Activity : +SetDuration(): void
+Activity : +DisplaySpinner(): void
+Activity : +RunActivity(): void
+Activity : +DisplayOutro(Outro: string): void
+Activity : +DisplayPrompt(): void
+
+' Inheritance:
+Activity <|-- BreathingActivity
+Activity <|-- ReflectionActivity
+Activity <|-- ListingActivity
+
+
+' __________BreathingActivity__________
+' Attributes:
+BreathingActivity : -_breathingIntro: string
+BreathingActivity : -_breathingOutro: string
+BreathingActivity : -_breathingInstructions: string
+
+' Constructors:
+BreathingActivity : +BreathingActivity() : Base()
+
+' Methods:
+BreathingActivity : +BreathingGuider(): void
+BreathingActivity : +Breathe(): void
+
+
+' __________ReflectionActivity__________
+' Attributes:
+ReflectionActivity : -_reflectionIntro: string
+ReflectionActivity : -_reflectionOutro: string
+ReflectionActivity : -_reflectionInstructions: string
+' ReflectionActivity : -_promptList: List<string>
+ReflectionActivity : -_questionList: List<string>
+
+' Constructors:
+ReflectionActivity : +ReflectiionActivity() : Base()
+
+' Methods:
+ReflectionActivity : +DisplayQuestion(): void
+
+
+' __________ListingActivity__________
+' Attibutes:
+ListingActivity : -_listingIntro: string
+ListingActivity : -_listingOutro: string
+ListingActivity : -_listingInstructions: string
+' ListingActivity : -_promptList: List<string>
+ListingActivity : -_gratitudeList: List<string>
+
+' Constructors:
+ListingActivity : +ListingActivity()
+
+' Methods:
+ListingActivity : +SetGratitudeList(): int
+
+@enduml

@@ -12,6 +12,7 @@ public class GospelLibrary {
 
     // Constructors:
     public GospelLibrary(string Decision) {
+        Console.Clear();
         if (Decision.ToUpper() == "RANDOM") {
             StockBibleDictionary();
             RandomScriptureSelector();
@@ -24,14 +25,28 @@ public class GospelLibrary {
             }
             Console.Write("");
             _scriptureReference = Console.ReadLine();
-            do{
+            bool trial = false;
+            while (trial != true) {
                 if (_referenceLibrary.Contains(_scriptureReference) == true) {
                     _selectedScripture = _bibleDictionary[_scriptureReference];
+                    trial = true;
                 }
                 else {
+                    Console.Clear();
                     Console.WriteLine("Sorry, but that reference is invalid.");
+                    Console.WriteLine("Try typing the reference as it is displayed.");
+                    // Console.WriteLine("Hit the enter key when you are ready to continue: ");
+                    Console.Read();
+                    Console.Clear();
+
+                    Console.WriteLine("Which of the following scriptures do you want study? ");
+                    foreach (string scripture in _referenceLibrary) {
+                        Console.WriteLine(scripture);
+                    }
+                    Console.Write("");
+                    _scriptureReference = Console.ReadLine();
                 }
-            } while (_referenceLibrary.Contains(_scriptureReference) == false);
+            } //while (trial != true);
         }
     }
 

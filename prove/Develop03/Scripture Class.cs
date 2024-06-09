@@ -55,21 +55,29 @@ public class Scripture {
         _modifiedScriptureText = _wordsOfTheLivingProphets;
     }
 
-    public void ShowScripture() {
+    public void RevealScripture() {
+        foreach (string k in _wordsOfTheLivingProphets) {
+            Console.Write(k);
+            Console.Write(" ");
+        }
+        Console.Write("\n\nHit the enter key when you are ready to continue");
+        Console.ReadLine();
+    }
+    public void DisplayScripture() {
         foreach (string j in _modifiedScriptureText) {
             Console.Write(j);
             Console.Write(" ");
         }
-        Console.Write("Do you want to reveal see the scripture (YES/NO)?");
-        string response = Console.ReadLine();
-        if (response.ToUpper() == "YES") {
-            foreach (string k in _wordsOfTheLivingProphets) {
-                Console.Write(k);
-                Console.Write(" ");
-            }
-        }
+        // Console.Write("Do you want to reveal see the scripture (YES/NO)?");
+        // string response = Console.ReadLine();
+        // if (response.ToUpper() == "YES") {
+        //     foreach (string k in _wordsOfTheLivingProphets) {
+        //         Console.Write(k);
+        //         Console.Write(" ");
+        //     }
+        // }
         Console.WriteLine();
-        Console.Write("Hit the enter key when you are ready to continure:\n");
+        Console.Write("Hit the enter key when you are ready to continue:\n");
         Console.ReadLine();
         Console.Clear();
     }

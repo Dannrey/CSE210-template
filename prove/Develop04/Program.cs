@@ -37,7 +37,8 @@ value, acts to run the program, whereas the second one was constructed to do not
 and to make sure that each of the subclasses' constructors worked properly without accidentally setting off a second
 stem of the program.
 
-Lastly, I also made use of the Console.Beep() command for the breathing and listing activity.
+Lastly, I also made use of the Console.Beep() command for the breathing and listing activity and in the listing 
+activity I have it so that the program will return a message based on how many responses it gets from the user.
 
 I really enjoyed making this program, I hope you enjoy it!
 */ 

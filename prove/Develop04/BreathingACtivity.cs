@@ -1,3 +1,11 @@
+/*
+File name: BreathingActivityClass.cs
+Author: Danniel Reynolds
+Date: 06/10/2024 - 06/15/2024
+Purpose: Create the BreathingActivity class.
+*/
+
+
 public class BreathingActivity : Activity{
     // Attributes:
     private string _breathingIntro = "Welcome to the breathing activity!\n";
@@ -14,9 +22,6 @@ public class BreathingActivity : Activity{
         Breathe();
         BreathingGuider();
         DisplayOutro(_breathingOutroP1,_breathingOutroP2);
-        Console.Write("Hit the Enter key when you are ready to continue:");
-        Console.ReadLine();
-        Console.Clear();
     }
 
 
@@ -29,6 +34,8 @@ public class BreathingActivity : Activity{
         do{   // Note to self, fix this so that it doesn't use as many if statements and will just cycle through all of the code at once. Then one breath would not be incomplete.
             // if (x < 3){
                 // if (x == 0){
+            Console.Beep();
+            
             Console.Clear();
             Console.WriteLine("Breathe in");
                 // }
@@ -139,6 +146,8 @@ public class BreathingActivity : Activity{
             Thread.Sleep(125);
             Console.Write("\b\b \b\b ");
             // Thread.Sleep(125);
+            // Console.Write("\b\b \b\b ");
+            // Thread.Sleep(750);
             Thread.Sleep(1000);
             Console.Clear();
             CurrentTime = DateTime.Now;
@@ -146,8 +155,11 @@ public class BreathingActivity : Activity{
         Console.Clear();
     }
     public void Breathe(){
-        Console.Write("How long, in seconds, would you like for your session to be? ");
-        int Duration = int.Parse(Console.ReadLine());
-        SetDuration(Duration);
+        SetDuration();
+        DisplaySpinner();
+        Console.Clear();
+        Console.WriteLine("Get ready");
+        DisplaySpinner();
+        // Thread.Sleep(1000);
     }
 }

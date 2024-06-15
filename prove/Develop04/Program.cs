@@ -37,6 +37,8 @@ value, acts to run the program, whereas the second one was constructed to do not
 and to make sure that each of the subclasses' constructors worked properly without accidentally setting off a second
 stem of the program.
 
+Lastly, I also made use of the Console.Beep() command for the breathing and listing activity.
+
 I really enjoyed making this program, I hope you enjoy it!
 */ 
 using System;

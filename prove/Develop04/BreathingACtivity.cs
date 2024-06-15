@@ -11,7 +11,7 @@ public class BreathingActivity : Activity{
     private string _breathingIntro = "Welcome to the breathing activity!\n";
     private string _breathingOutroP1 = "Congratulations. You have successfully completed about ";
     private string _breathingOutroP2 = " seconds of the breathing activity.";
-    private string _breathingInstructions = "This activity will help you relax by walking you through breathing in and out slowly.\nClear your mind and focus on your breathing.\n";
+    private string _breathingInstructions = "This activity will help you relax by walking you through breathing in and out slowly.\nClear your mind and focus on your breathing.\nYou will begin the activity on the beep.\nHit the Enter key when you are ready to begin.";
 
 
     // Constructors:

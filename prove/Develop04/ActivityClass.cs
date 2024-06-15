@@ -62,6 +62,7 @@ public class Activity {
     public void SetDuration(){
         Console.Write("How long, in seconds, would you like for your session to be? ");
         _duration = int.Parse(Console.ReadLine());
+        Console.Clear();
     }
     public void DisplaySpinner(){
         int iteration = 0;
@@ -116,7 +117,4 @@ public class Activity {
         }
         
     }
-    
-
-
 }

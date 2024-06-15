@@ -9,7 +9,7 @@ Purpose: Create the ListingActivity class.
 public class ListingActivity : Activity{
     // Attributes:
     private string _listingIntro = "Welcome to the Listing Activity!\n";
-    private string _listingInstructions = "This activity will help you reflect on the good things in your life by having you focus on listing things\nrelating to a specific area.\nHit the Enter key when you are ready to continue.";
+    private string _listingInstructions = "This activity will help you reflect on the good things in your life by having you focus on listing things\nrelating to a specific area.\nYou will begin listing items at the beep.\nHit the Enter key when you are ready to continue.";
     private string _listingOutroP1 = "Congratulations. You have successfully completed ";
     private string _listingOutroP2 = " seconds of the listing activity.";
     private List<string> _promptList = new List<string>(["Think about a time when you felt the spirit.","Think of a time when you did something nice for another.","Think of a time when you had lots of fun.","Think of a time when somebody did something nice for you."]);
@@ -28,14 +28,12 @@ public class ListingActivity : Activity{
         Console.WriteLine("Focus on the following prompt and times and events that it makes you think of:");
         DisplayPrompt();
         GetGratitudeList();
+        DisplaySpinner();
         DisplayOutro(_listingOutroP1,_listingOutroP2);
     }
 
 
     // Methods:
-    public void SetGratitudeList(){
-
-    }
     public void DisplayPrompt(){
         // List<string> prompts = new List<string>();
         // prompts = _promptList;
@@ -51,6 +49,7 @@ public class ListingActivity : Activity{
     public void GetGratitudeList(){
         List<string> GratitudeList = new List<string>();
         DisplaySpinner();
+        Console.Beep();
         DateTime CurrentTime = DateTime.Now;
         DateTime EndTime = CurrentTime.AddSeconds(_duration);
         string GratitudeObject;

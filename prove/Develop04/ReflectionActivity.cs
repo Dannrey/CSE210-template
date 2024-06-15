@@ -1,10 +1,9 @@
 /*
-File name: ReflectingActivityClass.cs
+File name: ReflectionActivityClass.cs
 Author: Danniel Reynolds
 Date: 06/10/2024 - 06/15/2024
 Purpose: Create the ReflectingActivity class.
 */
-
 
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -16,7 +15,8 @@ public class ReflectionActivity : Activity{
     private string _programOutroP1 = "Congratulations. You have successfully completed about ";
     private string _programOutroP2 = " seconds of the reflection activity.";
     private List<string> _questionList = new List<string>(["What was your favorite thing that happened to you?","What is the worst thing that happened to you?","What was the nicest thing someone did for you?","What was the nicest thing that you did for someone else?","What was your favorite thing that you did?","Did you feel the Spirit?"]);
-    private List<string> _promptList = new List<string>(["Think about your last birthday.","Think about the last Christmas.","Think about the last General Conference.","Think about the last time you went on vacation.","Think about the last time you saw your best friend.","Think about yesterday.","Think about"]);
+    private List<string> _promptList = new List<string>(["Think about your last birthday.","Think about the last Christmas.","Think about the last General Conference.","Think about the last time you went on vacation.","Think about the last time you saw your best friend.","Think about yesterday.","What was the greatest part about it?","Was there anything you could have done better?",""]);
+
 
     // Constructors:
     public ReflectionActivity(){

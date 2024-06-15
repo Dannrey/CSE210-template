@@ -38,7 +38,8 @@ and to make sure that each of the subclasses' constructors worked properly witho
 stem of the program.
 
 Lastly, I also made use of the Console.Beep() command for the breathing and listing activity and in the listing 
-activity I have it so that the program will return a message based on how many responses it gets from the user.
+activity I have it so that the program will return a message based on how many responses it gets from the user. There
+might be other things that I added as well, but I can't remember them.
 
 I really enjoyed making this program, I hope you enjoy it!
 */ 

@@ -12,7 +12,7 @@ public class ListingActivity : Activity{
     private string _listingInstructions = "This activity will help you reflect on the good things in your life by having you focus on listing things\nrelating to a specific area.\nYou will begin listing items at the beep.\nHit the Enter key when you are ready to continue.";
     private string _listingOutroP1 = "Congratulations. You have successfully completed another ";
     private string _listingOutroP2 = " seconds of the listing activity.";
-    private List<string> _promptList = new List<string>(["Think about a time when you felt the spirit.","Think of a time when you did something nice for another.","Think of a time when you had lots of fun.","Think of a time when somebody did something nice for you."]);
+    private List<string> _promptList = new List<string>(["Think about a time when you felt the spirit.","Think of a time when you did something nice for another.","Think of a time when you had lots of fun.","Think of a time when somebody did something nice for you.","Who are people that you appreciate?","What are personal strengths of yours?","Who are people that you have helped this week?","Who are some of your personal heroes?"]);
     // private List<string> _gratitudeList = new List<string>();
 
 

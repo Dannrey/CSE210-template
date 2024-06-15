@@ -54,7 +54,7 @@ public class ListingActivity : Activity{
         DateTime EndTime = CurrentTime.AddSeconds(_duration);
         string GratitudeObject;
         do{
-            Console.Write("");
+            Console.Write(">");
             GratitudeObject = Console.ReadLine();
             GratitudeList.Add(GratitudeObject);
             CurrentTime = DateTime.Now;

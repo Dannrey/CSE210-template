@@ -32,7 +32,6 @@ public class ReflectionActivity : Activity{
 
     // Methods:
     public void DisplayQuestions(){
-        // Console.Clear();
         Random random = new Random();
         string Question;
         DateTime CurrentTime = DateTime.Now;
@@ -41,11 +40,8 @@ public class ReflectionActivity : Activity{
         foreach (string item in _questionList){
             Questions.Add(item);
         }
-        // Questions = _questionList;
         int QuestionIndex;
         do{
-            // CurrentTime = DateTime.Now;
-            
             QuestionIndex = random.Next(0,Questions.Count-1);
             Question = Questions[QuestionIndex];
             Questions.Remove(Questions[QuestionIndex]);
@@ -60,7 +56,6 @@ public class ReflectionActivity : Activity{
         } while (CurrentTime != EndTime && CurrentTime < EndTime);
         Console.WriteLine("Hit the Enter key to continue:");
         Console.ReadLine();
-        
     }
     public void DisplayPrompt(){
         Random random = new Random();

@@ -1,0 +1,20 @@
+@startuml FinalProject
+' Alright. I believe that I understand the concepts well enough and that I'll be able to make a final project.
+' I'm thinking that I want to do a basic simulator for particle motion.
+' As of the time of writing this, I have no idea how to make an abstract class in a class diagram but that will change 
+' shortly.
+
+' So, my idea is that I'd have the base class and then there will be two levels of derived classes, with the middle level 
+' being an abstract class to define the methods that its child classes will use.
+
+' Attributes:
+Physics : - _programIntro: string
+Physics : - _programInstruction: string
+Physics : - _programOutro: string
+
+' Constructors:
+Physics : + Physics()
+Physics : + Physics(PlaceHolder : string)
+
+' Methods:
+Physics : + DisplayIntro(Intro: String);

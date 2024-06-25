@@ -1,0 +1,135 @@
+@startuml NoName
+' First things first, I'll define the required classes:
+' Classes:
+class GoalTracker
+Class Goal
+class LifetimeStatistics
+Class UserInterface
+' Sublasses:
+Goal <|-- ListGoal
+Goal <|-- LongTermGoal
+Goal <|-- SimpleGoal
+
+
+' Alright. That is now done.
+' Now, I can go and figure out what needs to be in what class:
+
+
+'__________Goal class__________
+' Attributes:
+Goal : -_programIntro: string
+Goal : -_programInstructions: string
+Goal : -_programOutro: string
+Goal : #_goalName: string
+Goal : #_goalCreationTime: DateTime
+Goal : #_currentTime: DateTime
+Goal : #_pointsForCompletingGoal: int
+Goal : #_pointsEarnedThisSession: int
+Goal : #_goalCompleteStatus: bool
+
+' Constructors:
+Goal : +Goal()
+Goal : +Goal(PlaceHolder: string)
+
+' Methods:
+Goal : +MakeNewGoal(): void
+Goal : +SetGoalTime(): void
+Goal : +SetPointEarning(): void
+Goal : +EarnPoints(): void
+Goal : +ReturnTotalPointsEarned(): int
+Goal : +ReturnGoalName(): string
+Goal : +MarkGoalComplete(): void
+
+
+'__________ListGoal subclass__________
+' Attributes:
+ListGoal : -_listGoalIntro: string
+ListGoal : -_listGoalInstructions: string
+ListGoal : -_ListGoalOutro: string
+ListGoal : -_lengthOfGoal: int
+ListGoal : -_completedGoalSections: int
+ListGoal : -_completedGoalBonus: int
+
+' Constructors:
+ListGoal : +ListGoal()
+
+' Methods:
+ListGoal : +MakeNewGoal(): void
+ListGoal : +SetPointEarning(): void
+
+
+
+'__________LongTermGoal subclass__________
+' Attributes:
+LongTermGoal : -_LongTermGoalIntro: string
+LongTermGoal : -_LongTermGoalInstructions: string
+LongTermGoal : -_LongTermGoalOutro: string
+
+' Constructors:
+LongTermGoal : +LongTermGoal()
+
+' Methods:
+LongTermGoal : +MakeNewGoal(): string
+LongTermGoal : +SetPointEarning(): string
+
+
+'__________SimpleGoal class__________
+' Attributes:
+SimpleGoal : -_simpleGoalIntro: string
+SimpleGoal : -_simpleGoalInstructions: string
+SimpleGoal : -_simpleGoalOutro: string
+
+' Constructors:
+SimpleGoal : +SimpleGoal()
+
+' Methods:
+SimpleGoal : +MakeNewGoal(): void
+SimpleGoal : +SetPointEarning(): void
+
+
+'__________GoalTracker class__________
+' Attributes:
+GoalTracker : -_goalTrackerInstructions: string
+' GoalTracker : -_goalTrackerMeu: string
+GoalTracker : -_currentGoals: List<Goal>
+GoalTracker : -_goalTrackerMenu: string
+
+' Constructors:
+GoalTracker : +GoalTracker()
+
+' Methods:
+GoalTracker : +DisplayAllGoals(): void
+GoalTracker : +DisplayGoal(): void
+GoalTracker : +AddNewGoal(NewGoal: Goal): void
+GoalTracker : +DeleteOldGoal(): void
+GoalTracker : +EditGoalStatus(): void
+' GoalTracker : +MakeGoalComplete(): Goal
+
+
+'__________UserInteface class__________
+' Attributes:
+
+' Constructors:
+UserInterface : +UserInterface()
+
+' Methods:
+UserInterface : +DisplayIntro(Intro: string):void
+UserInterface : +DisplayInstructions(Instructions: string): void
+UserInterface : +DisplayMenu(Menu: string): void
+UserInterface : +DisplayOutro(Outro: string): void
+UserInterface : +ReceiveCommand(): void
+
+
+'__________LifetimeStatistics class__________
+' Attributes:
+LifetimeStatistics : -_runningGoals: int
+LifetimeStatistics : -_completedGoals: int
+LifetimeStatistics : -_totalGoalsSet: int
+
+' Constructors:
+LifetimeStatistics : +LifetimeStatistics()
+
+' Methods:
+LifetimeStatistics : +DisplayLifetimeStatistics(): void
+LifetimeStatistics : +AddNewCompletedGoal(): void
+LifetimeStatistics : +AddNewRunningGoal(): void

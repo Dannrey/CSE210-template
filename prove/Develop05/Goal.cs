@@ -1,15 +1,9 @@
 public class Goal{
     // Attributes:
-    private string _goalIntro = "This is the Goal Device (D.G.).\nThe G.D. will help you in the creation of goals.";
-    private string _goalInstructions = "";
-    private string _goalMenu = "There are three types of goals that you can create:\n\t1.";
-    private string _goalOutro = "Congratulations! You have created a new goal!";
     protected string _goalName;
     protected DateTime _goalCreationTime;
-    protected DateTime _currentTime;
-    private int _pointsForCompletingGoal;
-    private int _pointsEarnedThisSession;
-    private bool _goalCompletionStatus;
+    protected int _pointsForCompletingGoal;
+    protected bool _goalCompletionStatus;
 
     // Constructors:
     public Goal(){
@@ -18,18 +12,23 @@ public class Goal{
     public Goal(string PlaceHolder){
 
     }
+    public Goal(string GoalName,DateTime GoalCreationTime, int PointsEarnedForCompletingGoal,bool GoalCompletionStatus){
+        _goalName = GoalName;
+        _goalCreationTime = GoalCreationTime;
+        _pointsForCompletingGoal = PointsEarnedForCompletingGoal;
+        _goalCompletionStatus = GoalCompletionStatus;
+    }
 
     // methods:
     public virtual void MakeNewGoal(){
 
     }
-    public virtual void EarnPoints(){
+    public virtual int EarnPoints(){
+        return _pointsForCompletingGoal;
+    }
 
-    }
-    public virtual int ReturnPointsEarnedThisSession(){
-        return _pointsEarnedThisSession;
-    }
-    public void MarkGoalComplete(){
+    public virtual void MarkGoalComplete(){
         _goalCompletionStatus = true;
     }
+
 }

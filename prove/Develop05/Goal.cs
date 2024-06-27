@@ -27,8 +27,9 @@ public class Goal{
         return _pointsForCompletingGoal;
     }
 
-    public virtual void MarkGoalComplete(){
+    public virtual int MarkGoalComplete(){
         _goalCompletionStatus = true;
+        return _pointsForCompletingGoal;
     }
 
 }

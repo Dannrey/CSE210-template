@@ -41,19 +41,37 @@ public class ListGoal : Goal{
         } while (Redo == true);
         _goalCreationTime = DateTime.Now;
         _completedGoalBonus = _pointsForCompletingGoal*10;
-        Console.Write("How many times do you want to complete this? ");
-        response = Console.ReadLine();
-        // bool _continue = true;
-        foreach (string character in response.Split("")){
-            if (Char.IsNumber(response,0) == false){
-                // _continue = false;
-                Console.Write("I'm sorry, that is not a valid option.\nPlease try again.");
-                Console.ReadLine();
-                Console.Clear();
-                break;
+        bool Continue = true;
+        do{
+            Console.Write("How many times do you want to complete this? ");
+            response = Console.ReadLine();
+            foreach (string character in response.Split("")){
+                if (Char.IsNumber(response,0) == false){
+                    Continue = false;
+                    Console.Write("I'm sorry, that is not a valid option.\nPlease try again.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                }
+                else {
+                    Continue = true;
+                    Console.Clear();
+                }
             }
-        }
+        } while (Continue == false);
         _lengthOfGoal = int.Parse(response);
+    }
+    public override int MarkGoalComplete(){
+        _completedGoalSections += 1;
+        int PointsEarned = 0;
+        if (_completedGoalSections < _lengthOfGoal){
+            PointsEarned = _pointsForCompletingGoal;
+        }
+        else if (_completedGoalSections == _lengthOfGoal){
+            PointsEarned = _pointsForCompletingGoal + _completedGoalBonus;
+            _goalCompletionStatus = true;
+        }
+        return PointsEarned;
     }
 
 }

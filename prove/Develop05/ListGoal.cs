@@ -62,16 +62,17 @@ public class ListGoal : Goal{
         _lengthOfGoal = int.Parse(response);
     }
     public override int MarkGoalComplete(){
-        _completedGoalSections += 1;
-        int PointsEarned = 0;
-        if (_completedGoalSections < _lengthOfGoal){
+        _completedGoalSections += 1;  // This will mark one of the list goals complete.
+        int PointsEarned = 0;  // The idea of this is to return how many points will be earned when the goal is complete.
+        if (_completedGoalSections < _lengthOfGoal){   // This if sttement will check if the entire goal lis complete or not, and will deliver a different result based on that.
             PointsEarned = _pointsForCompletingGoal;
         }
         else if (_completedGoalSections == _lengthOfGoal){
             PointsEarned = _pointsForCompletingGoal + _completedGoalBonus;
             _goalCompletionStatus = true;
+            Console.WriteLine($"ongratulations!\nYou completed your goal and earned {_completedGoalBonus} bonus points for completing the netire goal.");
         }
         return PointsEarned;
     }
-
+    // public override 
 }

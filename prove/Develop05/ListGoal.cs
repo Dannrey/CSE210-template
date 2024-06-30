@@ -70,7 +70,7 @@ public class ListGoal : Goal{
         else if (_completedGoalSections == _lengthOfGoal){
             PointsEarned = _pointsForCompletingGoal + _completedGoalBonus;
             _goalCompletionStatus = true;
-            Console.WriteLine($"ongratulations!\nYou completed your goal and earned {_completedGoalBonus} bonus points for completing the netire goal.");
+            Console.WriteLine($"Congratulations!\nYou completed your goal and earned {_completedGoalBonus} bonus points for completing the netire goal.");
         }
         return PointsEarned;
     }

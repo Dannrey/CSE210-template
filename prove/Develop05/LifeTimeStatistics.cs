@@ -24,11 +24,7 @@ public class LifetimeStatistics{
     }
 
 
-
-
-    // public void DisplayLifetimePoints(){
-    //     Console.WriteLine(_lifetimePoints);
-    // }
+    // Methods:
     public void AddNewCompletedGoal(){
         _completedGoals += 1;
         _runningGoals -= 1;

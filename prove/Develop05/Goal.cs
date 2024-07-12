@@ -48,6 +48,11 @@ public class Goal{
         return _pointsForCompletingGoal;
     }
 
+    public virtual string GetClassRepresentation(){
+        string GoalRepresentation = $"Goal,{_goalName},{_goalCreationTime},{_pointsForCompletingGoal},{_goalCompletionStatus},0,0,0";
+        return GoalRepresentation;
+    }
+
     public virtual int MarkGoalComplete(){
         _goalCompletionStatus = true;
         return _pointsForCompletingGoal;

@@ -33,6 +33,9 @@ public class LifetimeStatistics{
         _runningGoals += 1;
         _totalGoalsSet +=1;
     }
+    public void RemoveRunningGoal(){
+        _runningGoals -= 1;
+    }
     public void DisplayLifetimeStatistics(){
         Console.Clear();
         Console.WriteLine($"Total goals set: {_totalGoalsSet}");

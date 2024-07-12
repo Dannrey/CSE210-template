@@ -6,7 +6,7 @@ public class ListGoal : Goal{
 
     // Constructors:
     public ListGoal(){
-
+        CreateNewGoal();
     }
 
     public ListGoal(string GoalName,DateTime GoalCreationTime, int PointsEarnedForCompletingGoal,bool GoalCompletionStatus,int LengthOfGoal,int CompletedGoalSections,int CompletedGoalBonus){// : base(string GoalName,DateTime GoalCreationTime, int PointsEarnedForCompletingGoal,bool GoalCompletionStatus){
@@ -74,5 +74,9 @@ public class ListGoal : Goal{
         }
         return PointsEarned;
     }
-    // public override 
+
+    public override string GetClassRepresentation(){
+        string GoalRepresentation = $"Goal,{_goalName},{_goalCreationTime},{_pointsForCompletingGoal},{_goalCompletionStatus},_lengthOfGoal,_completedGoalSection,0";
+        return GoalRepresentation;
+    }
 }

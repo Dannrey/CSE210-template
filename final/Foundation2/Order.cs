@@ -38,7 +38,7 @@ public class Order{
     }
 
     public void PrintPackingLabel(){
-        Console.WriteLine("Puchases:\n");
+        Console.WriteLine("Puchases (Packing information):\n");
         float TotalPrice = 0;
         foreach (Product product1 in _products){
             product1.PrintPackingLabelInformation();

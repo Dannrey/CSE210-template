@@ -9,23 +9,32 @@ public class Product{
     private Dictionary<string,string> _productDictionary = new Dictionary<string,string>();
 
     // Constructors:
-    public Product(){
-
+    // public Product(){
+    //     GetProductID();
+    // }
+    public Product(string ProductKey){
+        Random random = new Random();
+        _productID = ProductKey;
+        CreatePriceDictionary();
+        CreateProductDictionary();
+        _productName = _productDictionary[_productID];
+        _productPrice = _priceDictionary[_productID];
+        _productQuantity = random.Next(1,5);
     }
 
 
     // Methods:
     public void CreatePriceDictionary(){
-        _priceDictionary.Add("A110",1776+50/100);
-        _priceDictionary.Add("A111",14+50/100);
-        _priceDictionary.Add("A112",699+99/100);
-        _priceDictionary.Add("A113",950+12/100);
+        _priceDictionary.Add("A110",1776);
+        _priceDictionary.Add("A111",14);
+        _priceDictionary.Add("A112",699);
+        _priceDictionary.Add("A113",950);
         _priceDictionary.Add("A114",100);
-        _priceDictionary.Add("A115",436+75/100);
-        _priceDictionary.Add("A116",12+15/100);
-        _priceDictionary.Add("A117",0+12/100);
-        _priceDictionary.Add("A118",70+3/100);
-        _priceDictionary.Add("A119",78/100);
+        _priceDictionary.Add("A115",7000);
+        _priceDictionary.Add("A116",120);
+        _priceDictionary.Add("A117",1);
+        _priceDictionary.Add("A118",73);
+        _priceDictionary.Add("A119",78);
         // _priceDictionary.Add("A120",1);
     }
     public void CreateProductDictionary(){
@@ -34,7 +43,7 @@ public class Product{
         _productDictionary.Add("A112","iPhone SE 3rd edition");
         _productDictionary.Add("A113","Universal Self-Destruct Button");
         _productDictionary.Add("A114","The Complete D&D Starter Set");
-        _productDictionary.Add("A115","");
+        _productDictionary.Add("A115","Authentic Pirate Ship (crew not included)");
         _productDictionary.Add("A116","Nachos");
         _productDictionary.Add("A117","Air (1 gallon)");
         _productDictionary.Add("A118","Nitroglycerin (3 pints)");
@@ -63,6 +72,13 @@ public class Product{
         Console.Write("Please enter a numeric quantity for how many of the item that was purchased: ");
         _productQuantity = int.Parse(Console.ReadLine());
     }
-
-
-}  // Okay. I stand corrected. I'll make two dictionaries that will use the product ID as a keyword, and each of the two dictionaries will hold information pertaining to the price of the object and its name.
+    public float GetPriceOfProduct(){
+        return _productQuantity * _productPrice;
+    }
+    public void PrintPackingLabelInformation(){
+        Console.WriteLine($"Product ID: {_productID}");
+        Console.WriteLine($"Product Name: {_productName}");
+        Console.WriteLine($"Product Price: ${_productPrice}");
+        Console.WriteLine($"Quantity Purchased: {_productQuantity}");
+    }
+}

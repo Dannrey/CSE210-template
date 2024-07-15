@@ -7,7 +7,7 @@ public class YouTubeVideo{
     private string _author;
     private List<Comment> _comments = new List<Comment>();
     // These list items are meant to randomize the video information, excluding video length.
-    private List<string> _authors = new List<string>(["Albert Einstein","Emily Elizabeth","Ferb Fletcher","Jason Walker","George Washington","D3WWY","Michael the Archangel","Toni Di Capelli","Taylor Swift","Keith Urban","Alessio Bernabei","Peter Rabbit","Kai the Ninja","Ham III"]);
+    private List<string> _authors = new List<string>(["Albert Einstein","Emily Elizabeth","Ferb Fletcher","Jason Walker","George Washington","D3WWY","Michael the Archangel","Toni Di Capelli","Taylor Swift","Keith Urban","Alessio Bernabei","Peter Rabbit","Kai the Ninja","Ham III","Gordan Tracy","Alan Tracy","Virgil Tracy"]);
     private List<string> _videoNameList = new List<string>(["How to Play Dungeons and Dragons","Space Flight for Dummies.","No Man's Sky, the Voyager Update","Music Over the Ages","Geothermal Hotsprings, Alien Worlds at Home","The Last Mimzy","How It's Made: iPhone","Beyonders, Seeds of Rebellion; Audio Book","The Day the Earth Sttod Still","The Best of SpongeBob","Spinjitzu for Beginners"]);
 
 

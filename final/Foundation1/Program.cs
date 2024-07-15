@@ -5,13 +5,15 @@ class Program
     static void Main(string[] args){
         Console.Clear();
         // These are the instructory lines of the program.
-        Console.WriteLine("Hello and greetings! I am the Video Listing and Analytics Device, but you may call me V.L.A.D.");
-        // Thread.Sleep(4000);
+        Console.WriteLine("\nHello and greetings! I am the Video Listing and Analytics Device, but you may call me V.L.A.D.");
+        Thread.Sleep(2500);
         Console.WriteLine("My purpose today is to assist you help organize analytic data from YouTube videos.");
-        // Thread.Sleep(4000);
-        Console.WriteLine("I shall list through a number of videos and display to you their contents.\nFollow the onscreen instructions as they appear.");
-        // Thread.Sleep(4000);
-        Console.Write("Hit the enter key when you are ready to continue:");
+        Thread.Sleep(2500);
+        Console.WriteLine("I shall list through a number of videos and display to you their contents.");
+        Thread.Sleep(2500);
+        Console.WriteLine("Follow the onscreen instructions as they appear.");
+        Thread.Sleep(2500);
+        Console.Write("\nHit the enter key when you are ready to continue:");
         Console.ReadLine();
         Console.Clear();
 

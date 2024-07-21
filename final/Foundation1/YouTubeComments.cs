@@ -9,9 +9,20 @@ public class Comment{
 
     // Constructors:
     public Comment(){
-        Random random = new Random();
-        _author = _authorList[random.Next(0,_authorList.Count - 1)];
-        _content = _commentContent[random.Next(0,_commentContent.Count - 1)];
+        Console.Clear();
+        Console.Write("Please enter the name of the comment author: ");
+        _author = Console.ReadLine();
+        // Random random = new Random();
+        // _author = _authorList[random.Next(0,_authorList.Count - 1)];
+        Console.Clear();
+
+        // _content = _commentContent[random.Next(0,_commentContent.Count - 1)];
+        Console.WriteLine("Please enter the content of the comment:");
+        _content = Console.ReadLine();
+        Console.Clear();
+        Console.Write("You have successfully uploaded a new comment.\nHit the enter key when you are ready to continue: ");
+        Console.ReadLine();
+        Console.Clear();
     }
 
 

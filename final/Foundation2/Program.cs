@@ -10,19 +10,44 @@ class Program{
         Console.ReadLine();
         Console.Clear();
 
-        Console.WriteLine("Preparing to display consumer information.");
+        Console.Write("Preparing to display consumer information");
+        Thread.Sleep(500);
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.Write("\b \b\b \b\b \b");
+        
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.Write(".");
+        Thread.Sleep(500);
+        Console.WriteLine();
+
 
         // Okay. So what I need to do is create a list of orders and print the information pertaining to it,
         Random random = new Random();
         int OrderCount = random.Next(3,5);
+        OrderCount = 1;
+        Console.WriteLine($"You will be asked to enter information pertaining to {OrderCount} orders");
+        Console.Write("Hit the enter key when you are ready to continue:");
+        Console.ReadLine();
+        Console.Clear();
         int iteration = 0;
         List<Order> Orders = new List<Order>(); 
         while (iteration != OrderCount){
+            iteration += 1;
+            Console.Clear();
+            Console.WriteLine($"Costumer number {iteration}'s order:");
             Order order = new Order();
             Orders.Add(order);
-            iteration += 1;
-            Console.Write(".");
-            Thread.Sleep(1000);
+            
+            // Console.Write(".");
+            // Thread.Sleep(1000);
         }
         Console.Clear();
         Console.WriteLine();

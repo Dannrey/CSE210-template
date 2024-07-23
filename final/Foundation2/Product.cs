@@ -21,7 +21,14 @@ public class Product{
         _productPrice = _priceDictionary[_productID];
         _productQuantity = random.Next(1,5);
     }
-
+    public Product(string ProductKey, int QuantityPurchased){
+        CreatePriceDictionary();
+        CreateProductDictionary();
+        _productID = ProductKey;
+        _productQuantity = QuantityPurchased;
+        _productName = _productDictionary[_productID];
+        _productPrice = _priceDictionary[_productID];
+    }
 
     // Methods:
     public void CreatePriceDictionary(){
@@ -80,5 +87,14 @@ public class Product{
         Console.WriteLine($"Product Name: {_productName}");
         Console.WriteLine($"Product Price: ${_productPrice}");
         Console.WriteLine($"Quantity Purchased: {_productQuantity}");
+    }
+    public void DisplayProductDictionary(){
+        Console.WriteLine(" item key      item");    
+        foreach (KeyValuePair<string,string> entry in _productDictionary){
+            Console.WriteLine($"   {entry.Key}      {entry.Value}");
+            // Console.WriteLine();
+            // Console.WriteLine("  key    ")
+            // Console.WriteLine(entry.Key);
+        }
     }
 }

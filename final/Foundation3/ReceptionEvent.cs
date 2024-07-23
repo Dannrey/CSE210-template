@@ -11,16 +11,24 @@ public class ReceptionEvent : Event{
     // Constructors:
     public ReceptionEvent(){
         Random random = new Random();
-        _rsvpEmailAddress = _emailAddresses[random.Next(0,_emailAddresses.Count - 1)];
-        _timeOfEvent = _timeList[random.Next(0,_timeList.Count - 1)];
-        _dateOfEvent = _dateList[random.Next(0,_dateList.Count - 1)];
+        // _rsvpEmailAddress = _emailAddresses[random.Next(0,_emailAddresses.Count - 1)];
+        // _timeOfEvent = _timeList[random.Next(0,_timeList.Count - 1)];
+        // _dateOfEvent = _dateList[random.Next(0,_dateList.Count - 1)];
         _numberOfSeats = random.Next(50,500);
+        // Console.WriteLine($"There are currently {_numberOfSeats-_guestList.Count}/{_numberOfSeats} available.");
         // _speaker = _speakers[random.Next(0,_speakers.Count-1)];
-        _dateOfEvent = _dateList[random.Next(0,_dateList.Count-1)];
-        _timeOfEvent = _timeList[random.Next(0,_dateList.Count-1)];
-        _eventDescription = _descriptions[random.Next(0,_descriptions.Count-1)];
-        _eventTitle = _titles[random.Next(0,_titles.Count-1)];
+        // _dateOfEvent = _dateList[random.Next(0,_dateList.Count-1)];
+        // _timeOfEvent = _timeList[random.Next(0,_dateList.Count-1)];
+        // _eventDescription = _descriptions[random.Next(0,_descriptions.Count-1)];
+        // _eventTitle = _titles[random.Next(0,_titles.Count-1)];
         _eventType = "Reception";
+        GetDetails();
+        GetSpecificDetails();
+    }
+    public void GetSpecificDetails(){
+        Console.Write("To attend this event, guests must register for it in advance.\nWhat is the RSVP email address? ");
+        _rsvpEmailAddress = Console.ReadLine();
+
     }
 
 
@@ -30,6 +38,8 @@ public class ReceptionEvent : Event{
         Console.WriteLine($"Event title: {_eventTitle}");
         Console.WriteLine($"{_eventDescription}");
         Console.WriteLine($"Come join us on {_dateOfEvent}, at {_timeOfEvent}.");
+        Console.WriteLine($"The email to register is {_rsvpEmailAddress}.");
+        Console.WriteLine($"There are currently {_numberOfSeats-_guestList.Count}/{_numberOfSeats} available. Sign up while there is still time!");
         Console.WriteLine($"Current amount of guests: {_guestList.Count}");
         Console.Write("Location:");
         _addressOfEvent.GetAddressString();

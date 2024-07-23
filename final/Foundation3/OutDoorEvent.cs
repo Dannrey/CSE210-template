@@ -1,13 +1,13 @@
 public class OutDoorEvent : Event{
     private string _weatherForcast;
     private List<string> _weatherPatterns = new List<string>(["sunny","cloudy","cloudy with a chance of rain","windy","stomy","partially cloudy"]);
-    private List<string> _eventTitles = new List<string>(["","Ryan's Birthday Party","Great Northwestern Auction"]);
-    private List<string> _eventDescriptions = new List<string>(["",""]);
+    // private List<string> _eventTitles = new List<string>(["","Ryan's Birthday Party","Great Northwestern Auction"]);
+    // private List<string> _eventDescriptions = new List<string>(["",""]);
 
     public OutDoorEvent(){
         Random random = new Random();
-        _weatherForcast = _weatherPatterns[random.Next(0,_weatherPatterns.Count-1)];
-        _eventTitle = _eventTitles[random.Next(0,_eventTitles.Count-1)];
+        _weatherForcast = _weatherPatterns[random.Next(0,_weatherPatterns.Count-1)];  // This is the only randomly determined variable that I left in the system because it is the weather for Pete's sake!
+        GetDetails();
     }
 
 

@@ -17,7 +17,7 @@ public class BikingActivity : Activity{
 
     // Methods:
     public override void SetSpeed(){
-        Console.Write("What was the average speed given by the stationary bike device? ");
+        Console.Write("What was the average speed given by the stationary bike device? (in kilometers per hour): ");
         _speed = float.Parse(Console.ReadLine());
         SetDistance();
         SetPace();

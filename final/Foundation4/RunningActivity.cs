@@ -15,7 +15,7 @@ public class RunningActivity : Activity{
 
     // Methods:
     public override void SetDistance(){
-        Console.Write("Please enter the number of miles ran today:");
+        Console.Write("Please enter the number of miles ran today (in kilometers): ");
         _distance = int.Parse(Console.ReadLine());
         // And, because the other
         SetPace();

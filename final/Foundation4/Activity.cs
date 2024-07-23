@@ -22,9 +22,12 @@ public class Activity{
         Console.Write("Please enter the amount of time spent on this exercise (in minutes): ");
         _minutes = int.Parse(Console.ReadLine());
     }
-    public virtual void SetDistance(){}  // Each of these are going to be called into use.
-    public virtual void SetPace(){}  // Each of these are going to be called into use.
-    public virtual void SetSpeed(){}  // Each of these are going to be called into use.
+    public virtual void SetDistance(){
+    }  // Each of these are going to be called into use.
+    public virtual void SetPace(){
+    }  // Each of these are going to be called into use.
+    public virtual void SetSpeed(){
+    }  // Each of these are going to be called into use.
     public void SetDate(){
         // DateTime dateTime = new DateTime();
         _date = DateTime.Now;
@@ -32,7 +35,7 @@ public class Activity{
         // _date = dateTime.ToLongDateString();
     }
     public void PrintSummaryString(){
-        Console.WriteLine($"{_date} {_activityType} ({_minutes} minutes)- Distance Covered: {_distance}, Average Speed: {_speed}, Average Pace: {_pace}");
+        Console.WriteLine($"{_date} {_activityType} ({_minutes} minutes)- Distance Covered: {_distance} kilometers, Average Speed: {_speed} kpm, Average Pace: {_pace} minutes per kilometer");
     }
 
 

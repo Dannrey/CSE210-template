@@ -41,7 +41,7 @@ public class Event{
         Console.WriteLine($"Event title: {_eventTitle}");
         Console.WriteLine($"{_eventDescription}");
         Console.WriteLine($"Come join us on the {_dateOfEvent}, at {_timeOfEvent}.");
-        Console.Write("Location:");
+        // Console.Write("Location:");
         _addressOfEvent.GetAddressString();
         Console.WriteLine("<<<<<<<<<<<<<<<<<-------->>>>>>>>>>>>>>>>>");
     }

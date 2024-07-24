@@ -17,7 +17,7 @@ public class OutDoorEvent : Event{
         Console.WriteLine($"{_eventDescription}");
         Console.WriteLine($"Come join us on the {_dateOfEvent}, at {_timeOfEvent}.");
         Console.WriteLine($"The weather forcast for {_dateOfEvent} is {_weatherForcast}.\nPlease dress accordingly.");
-        Console.Write("Location:");
+        // Console.Write("Location:");
         _addressOfEvent.GetAddressString();
         // Console.WriteLine($"Weather forcast for the event {_weatherForcast}");
         Console.WriteLine("<<<<<<<<<<<<<<<<<-------->>>>>>>>>>>>>>>>>");

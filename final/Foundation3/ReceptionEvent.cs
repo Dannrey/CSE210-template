@@ -41,7 +41,7 @@ public class ReceptionEvent : Event{
         Console.WriteLine($"The email to register is {_rsvpEmailAddress}.");
         Console.WriteLine($"There are currently {_numberOfSeats-_guestList.Count}/{_numberOfSeats} available. Sign up while there is still time!");
         Console.WriteLine($"Current amount of guests: {_guestList.Count}");
-        Console.Write("Location:");
+        // Console.Write("Location:");
         _addressOfEvent.GetAddressString();
         Console.WriteLine("<<<<<<<<<<<<<<<<<-------->>>>>>>>>>>>>>>>>");
     }

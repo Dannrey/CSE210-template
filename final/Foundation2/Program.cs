@@ -32,7 +32,7 @@ class Program{
         // Okay. So what I need to do is create a list of orders and print the information pertaining to it,
         Random random = new Random();
         int OrderCount = random.Next(3,5);
-        OrderCount = 1;
+        // OrderCount = 1;
         Console.WriteLine($"You will be asked to enter information pertaining to {OrderCount} orders");
         Console.Write("Hit the enter key when you are ready to continue:");
         Console.ReadLine();

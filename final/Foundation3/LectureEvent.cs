@@ -33,7 +33,7 @@ public class LectureEvent : Event{
         Console.WriteLine($"Come join us on {_dateOfEvent}, at {_timeOfEvent}.");
         Console.WriteLine($"There are {_numberOfSeats} seats at the lecture.\nIt will be broadcasted but if you desire to attend in person, please plan accordingly.\nOnce the lecture hall is filled, guests will be redirected to overflow areas where they will watch the live broadcast.");
 
-        Console.Write("Location: ");
+        // Console.Write("Location: ");
         _addressOfEvent.GetAddressString();
         Console.WriteLine("<<<<<<<<<<<<<<<<<-------->>>>>>>>>>>>>>>>>");
     }

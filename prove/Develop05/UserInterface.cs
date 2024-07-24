@@ -67,11 +67,12 @@ public class UserInteractions{
         _goalList.Add(NewGoal); 
     }
 
-    public void RemoveCompletedGoal(){
+    public int RemoveCompletedGoal(){
         // This will be used and called if a goal item's completion status is marked as true.
         // It will cause the goal to be removed from the list whether it was dropped or completed.
         // Whether you earn points or not is not of this method's concern.
         // string item;
+        int points;
 
 
         Console.WriteLine("Which goal from the list do you want to complete?");
@@ -94,6 +95,7 @@ public class UserInteractions{
                 List<string> characterList2 = new List<string>(j.Split());
                 if (characterList2[1] == goalName){
                     _stringGoalList.Remove(j);
+                    points = 0;
                 }
                 iteration += 1;
             }
@@ -103,11 +105,22 @@ public class UserInteractions{
                 List<string> characterList2 = new List<string>(j.Split(","));
                 if (characterList2[1] == goalName){
                     if (characterList2[0] == "LongTermGoal"){
-                        LongtermGoal goal = new LongtermGoal(characterList2[]);//0],characterList2[1],characterList2[2]){//,characterList2[3],characterList2[4],characterList2[5],characterList2[6],characterList2[7],characterList2[8],characterList2[9],characterList2[10]);
+                        LongtermGoal goal = new LongtermGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]));//0],characterList2[1],characterList2[2]){//,characterList2[3],characterList2[4],characterList2[5],characterList2[6],characterList2[7],characterList2[8],characterList2[9],characterList2[10]);
+                        points = goal.MarkGoalComplete();
                     }
+                    else if (characterList2[0] == "Goal"){
+                        Goal goal = new Goal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]));
+                        points = goal.MarkGoalComplete();
+                    }
+                    else if (characterList2[0] == "ListGoal"){
+                        ListGoal goal = new ListGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]),int.Parse(characterList2[5]),int.Parse(characterList2[6]),int.Parse(characterList2[7]));
+                        points = goal.MarkGoalComplete();
+                    }
+                    // _stringGoalList.Remove(j);
                 }
             }
         }
+        return points;  // I don't know what the problem with this here is, but it is holding up the program.
     }
     public void GoalsToRecord(){//List<string> Goals){
         // Alright, this method will take the contents of a list and put it into a recordable file.

@@ -65,7 +65,7 @@ class Program {
         verses.RevealScripture();
         // verses.ShowScripture();
         string UserSelection = "";
-        bool ReferenceStatus = false;
+        bool ReferenceStatus = true;
         do {
             Console.WriteLine();
             if (ReferenceStatus == false) {
@@ -87,11 +87,11 @@ class Program {
                 reference.RevealHiddenReference();
                 verses.RevealScripture();
             }
-            else if (UserSelection.ToUpper() == "HIDE") {
+            // else if (UserSelection.ToUpper() == "HIDE") {  // I desided to comment out this portion here because it wasn't working quite right.
                 // reference.SetReferenceStatus();
-                reference.HideCharacters();
-                ReferenceStatus = true;
-            }
+                // reference.HideCharacters();
+                // ReferenceStatus = true;
+            // }
             else if (UserSelection.ToUpper() == "CONTINUE") {
                 reference.DisplayReference();
                 verses.DisplayScripture();

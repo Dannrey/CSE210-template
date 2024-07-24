@@ -4,6 +4,7 @@ public class UserInteractions{
     // Attributes:
     private List<Goal> _goalList = new List<Goal>();
     private List<string> _stringGoalList = new List<string>();
+    private int _points = 0;  // Alright. I figured out how to bypass that last error message that was giving me grief. I went and defined a new variable here that return the total number of points earned by the user.
 
 
     // Constructors:
@@ -67,15 +68,15 @@ public class UserInteractions{
         _goalList.Add(NewGoal); 
     }
 
-    public int RemoveCompletedGoal(){
+    public int RemoveCompletedGoal(string complete){
         // This will be used and called if a goal item's completion status is marked as true.
         // It will cause the goal to be removed from the list whether it was dropped or completed.
         // Whether you earn points or not is not of this method's concern.
         // string item;
-        int points;
+        // int points;
 
 
-        Console.WriteLine("Which goal from the list do you want to complete?");
+        Console.WriteLine($"Which goal from the list do you want to {complete}?");
         foreach (string item in _stringGoalList){
             List<string> characterList = new List<string>(item.Split(","));
             Console.WriteLine(characterList[1]);
@@ -85,42 +86,43 @@ public class UserInteractions{
         string goalName = Console.ReadLine();
         Console.Clear();
 
-        Console.Write("Are you dropping it or completing it (enter drop or complete)? ");
-        string completionStatus = Console.ReadLine();
-        Console.Clear();
+        // Console.Write("Are you dropping it or completing it (enter drop or complete)? ");
+        // string completionStatus = Console.ReadLine();
+        // Console.Clear();
 
-        int iteration = 0;
-        if (completionStatus.ToLower() == "drop"){
+        // int iteration = 0;
+        if (complete.ToLower() == "terminate"){
             foreach (string j in _stringGoalList){
                 List<string> characterList2 = new List<string>(j.Split());
                 if (characterList2[1] == goalName){
                     _stringGoalList.Remove(j);
-                    points = 0;
+                    _points = 0;
                 }
-                iteration += 1;
+                // iteration += 1;
             }
         }
-        else if (completionStatus.ToLower() == "complete"){
+        else if (complete.ToLower() == "complete"){
             foreach (string j in _stringGoalList){
                 List<string> characterList2 = new List<string>(j.Split(","));
                 if (characterList2[1] == goalName){
                     if (characterList2[0] == "LongTermGoal"){
                         LongtermGoal goal = new LongtermGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]));//0],characterList2[1],characterList2[2]){//,characterList2[3],characterList2[4],characterList2[5],characterList2[6],characterList2[7],characterList2[8],characterList2[9],characterList2[10]);
-                        points = goal.MarkGoalComplete();
+                        _points = goal.MarkGoalComplete();
                     }
                     else if (characterList2[0] == "Goal"){
                         Goal goal = new Goal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]));
-                        points = goal.MarkGoalComplete();
+                        _points = goal.MarkGoalComplete();
                     }
                     else if (characterList2[0] == "ListGoal"){
                         ListGoal goal = new ListGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]),int.Parse(characterList2[5]),int.Parse(characterList2[6]),int.Parse(characterList2[7]));
-                        points = goal.MarkGoalComplete();
+                        _points = goal.MarkGoalComplete();
                     }
-                    // _stringGoalList.Remove(j);
+                    _stringGoalList.Remove(j);
+                    // _goalList.Remove();
                 }
             }
         }
-        return points;  // I don't know what the problem with this here is, but it is holding up the program.
+        return _points;  // I don't know what the problem with this here is, but it is holding up the program.
     }
     public void GoalsToRecord(){//List<string> Goals){
         // Alright, this method will take the contents of a list and put it into a recordable file.

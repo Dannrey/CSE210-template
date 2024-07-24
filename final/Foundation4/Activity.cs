@@ -35,7 +35,7 @@ public class Activity{
         // _date = dateTime.ToLongDateString();
     }
     public void PrintSummaryString(){
-        Console.WriteLine($"{_date} {_activityType} ({_minutes} minutes)- Distance Covered: {_distance} kilometers, Average Speed: {_speed} kpm, Average Pace: {_pace} minutes per kilometer");
+        Console.WriteLine($"{_date} {_activityType} ({_minutes} minutes)- Distance Covered: {_distance} kilometers, Average Speed: {_speed} kph, Average Pace: {_pace} minutes per kilometer");
     }
 
 

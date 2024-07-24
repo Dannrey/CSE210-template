@@ -34,7 +34,10 @@ public class LongtermGoal : Goal{
     public override int EarnPoints(){
         return _pointsForCompletingGoal;
     }
-
+    public override string GetClassRepresentation(){
+        string goalRepresentation = $"Goal,{_goalName},{_goalCreationTime},{_pointsForCompletingGoal},{_goalCompletionStatus},0,0,0";
+        return goalRepresentation;
+    }
     public override int MarkGoalComplete(){
         _goalCompletionStatus = true;
         return 0;

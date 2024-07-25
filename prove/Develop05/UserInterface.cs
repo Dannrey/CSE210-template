@@ -111,19 +111,20 @@ public class UserInteractions{
         // int iteration;
         string stringVariable;
         if (complete.ToLower() == "terminate"){
-            foreach (string j in _stringGoalList){
-                List<string> characterList2 = new List<string>(j.Split());
-                if (characterList2[1].ToLower() == goalName){
+            foreach (string item in _stringGoalList){
+                // List<string> characterList2 = new List<string>(item.Split());
+                characterList = new List<string>(item.Split(","));
+                if (characterList[1].ToLower() == goalName){
                     stringVariable = goalName;
                     _stringGoalList.Remove(goalName);
-                    _points = 0;
+                    _points += 0;
                 }
                 // iteration += 1;
             }
         }
         else if (complete.ToLower() == "complete"){
-            foreach (string j in _stringGoalList){
-                List<string> characterList2 = new List<string>(j.Split(","));
+            foreach (string item in _stringGoalList){
+                List<string> characterList2 = new List<string>(item.Split(","));
                 if (characterList2[1] == goalName){
                     if (characterList2[0] == "LongTermGoal"){
                         LongtermGoal goal = new LongtermGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]));//0],characterList2[1],characterList2[2]){//,characterList2[3],characterList2[4],characterList2[5],characterList2[6],characterList2[7],characterList2[8],characterList2[9],characterList2[10]);
@@ -137,7 +138,7 @@ public class UserInteractions{
                         ListGoal goal = new ListGoal(characterList2[1],DateTime.Parse(characterList2[2]),int.Parse(characterList2[3]),bool.Parse(characterList2[4]),int.Parse(characterList2[5]),int.Parse(characterList2[6]),int.Parse(characterList2[7]));
                         _points = goal.MarkGoalComplete();
                     }
-                    _stringGoalList.Remove(j);
+                    _stringGoalList.Remove(item);
                     // _goalList.Remove();
                 }
             }

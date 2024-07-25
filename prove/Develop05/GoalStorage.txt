@@ -1,6 +1,3 @@
-Goal,Learn Italian,7/24/2024 6:16:54 PM,500,False,0,0,0
-Goal,Vacuum the floor,7/24/2024 6:16:54 PM,500,False,0,0,0
-Goal,Clean the dishwasher,7/24/2024 6:16:54 PM,500,False,0,0,0
-Goal,Go to the temple,7/24/2024 8:41:11 PM,200,False,0,0,0
-Goal,Read my scriptures daily,7/24/2024 8:41:27 PM,100,False,0,0,0
-Goal,cls,7/24/2024 8:42:52 PM,500,False,_lengthOfGoal,_completedGoalSection,0
+Goal,Learn to fly,7/24/2024 9:00:38 PM,500,False,0,0,0
+Goal,Fly a plane daily,7/24/2024 9:00:58 PM,500,False,0,0,0
+Goal,Live on the moon for 5 years,7/24/2024 9:03:40 PM,500,False,_lengthOfGoal,_completedGoalSection,0

@@ -4,6 +4,7 @@ public class ListGoal : Goal{
     int _completedGoalSections;
     int _completedGoalBonus;
 
+
     // Constructors:
     public ListGoal(){
         MakeNewGoal();
@@ -76,7 +77,7 @@ public class ListGoal : Goal{
     }
 
     public override string GetClassRepresentation(){
-        string GoalRepresentation = $"Goal,{_goalName},{_goalCreationTime},{_pointsForCompletingGoal},{_goalCompletionStatus},_lengthOfGoal,_completedGoalSection,0";
+        string GoalRepresentation = $"ListGoal,{_goalName},{_goalCreationTime},{_pointsForCompletingGoal},{_goalCompletionStatus},_lengthOfGoal,_completedGoalSection,0";
         return GoalRepresentation;
     }
 }

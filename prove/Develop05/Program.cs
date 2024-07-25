@@ -26,16 +26,19 @@ class Program
                 Goal NewGoal = new Goal();
                 string GoalItem = NewGoal.GetClassRepresentation();
                 Interface.AddNewGoal(GoalItem,NewGoal);
+                Stats.AddNewRunningGoal();
             }
             else if (Activity == "2"){
                 LongtermGoal NewGoal = new LongtermGoal();
                 string GoalItem = NewGoal.GetClassRepresentation();
                 Interface.AddNewGoal(GoalItem,NewGoal);
+                Stats.AddNewRunningGoal();
             }
             else if (Activity == "3"){
                 ListGoal NewGoal = new ListGoal();
                 string GoalItem = NewGoal.GetClassRepresentation();
                 Interface.AddNewGoal(GoalItem,NewGoal);
+                Stats.AddNewRunningGoal();
             }
             else if (Activity == "4"){
                 Stats.DisplayLifetimeStatistics();
@@ -48,7 +51,7 @@ class Program
                 choice = "complete";
                 Stats.AddPoints(Interface.MarkGoalComplete(choice));
                 Stats.AddNewCompletedGoal();
-                Stats.AddPoints(5);
+                // Stats.AddPoints(5);
                 
             }
             else if (Activity == "6"){
@@ -63,6 +66,7 @@ class Program
 
         } while(Activity != "7");
         Interface.RecordRunningGoals();
+        Stats.StoreCurrentStatistics();
         Console.WriteLine("Have a nice day!");
     }
 }

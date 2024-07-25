@@ -1,3 +1,2 @@
-Goal,Learn to fly,7/24/2024 9:00:38 PM,500,False,0,0,0
-Goal,Fly a plane daily,7/24/2024 9:00:58 PM,500,False,0,0,0
-Goal,Live on the moon for 5 years,7/24/2024 9:03:40 PM,500,False,_lengthOfGoal,_completedGoalSection,0
+Goal,Learn to fly,7/24/2024 9:16:05 PM,500,False,0,0,0
+Goal,Learn to speak Italian,7/24/2024 9:17:10 PM,500,False,0,0,0

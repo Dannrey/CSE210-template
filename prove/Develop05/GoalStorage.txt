@@ -1,0 +1,3 @@
+Goal,Learn Italian,7/24/2024 6:16:54 PM,500,False,0,0,0
+Goal,Vacuum the floor,7/24/2024 6:16:54 PM,500,False,0,0,0
+Goal,Clean the dishwasher,7/24/2024 6:16:54 PM,500,False,0,0,0

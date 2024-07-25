@@ -95,12 +95,13 @@ public class UserInteractions{
         foreach (string item in _stringGoalList){
             characterList = new List<string>(item.Split(","));
             Console.WriteLine($"-{characterList[1]}");
-            // characterList.Clear();
+            characterList.Clear();
         }
 
         Console.Write("Please select one goal from the list by entering its name: ");
         string goalName = Console.ReadLine();
         Console.Clear();
+        
 
         // Console.Write("Are you dropping it or completing it (enter drop or complete)? ");
         // string completionStatus = Console.ReadLine();

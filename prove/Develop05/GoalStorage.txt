@@ -1,2 +1,0 @@
-Goal,Learn to fly,7/24/2024 9:16:05 PM,500,False,0,0,0
-Goal,Learn to speak Italian,7/24/2024 9:17:10 PM,500,False,0,0,0

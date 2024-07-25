@@ -6,7 +6,7 @@ public class ListGoal : Goal{
 
     // Constructors:
     public ListGoal(){
-        CreateNewGoal();
+        MakeNewGoal();
     }
 
     public ListGoal(string GoalName,DateTime GoalCreationTime, int PointsEarnedForCompletingGoal,bool GoalCompletionStatus,int LengthOfGoal,int CompletedGoalSections,int CompletedGoalBonus){// : base(string GoalName,DateTime GoalCreationTime, int PointsEarnedForCompletingGoal,bool GoalCompletionStatus){
@@ -18,7 +18,7 @@ public class ListGoal : Goal{
         _completedGoalSections = CompletedGoalSections;
         _completedGoalBonus = CompletedGoalBonus;
     }
-    public void CreateNewGoal(){
+    public override void MakeNewGoal(){
         Console.Write("What is the title of this goal? ");
         _goalName = Console.ReadLine();
         Console.Clear();
